@@ -25,11 +25,14 @@ pyannote/speaker-diarization-3.1 的 HTTP API 封装
 ```bash
 docker pull baoweiwei2/speaker-diarization-http:latest
 docker run -d \
+    --name diarization-service \
     -p 9001:9001 \
     -e HF_TOKEN=your_huggingface_token \
     -e REDIS_HOST=your_redis_host \
     -e REDIS_RESULT_EXPIRE=3600 \
-    baoweiwei2/speaker-diarization
+    -v /your/model/cache:/root/.cache \
+    --gpus all \
+    baoweiwei2/speaker-diarization-http:latest
 ```
 
 ### 方式二：本地部署
