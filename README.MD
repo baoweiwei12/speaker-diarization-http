@@ -23,7 +23,7 @@ pyannote/speaker-diarization-3.1 的 HTTP API 封装
 ### 方式一：Docker 部署（推荐）
 
 ```bash
-docker pull baoweiwei2/speaker-diarization:latest
+docker pull baoweiwei2/speaker-diarization-http:latest
 docker run -d \
     -p 9001:9001 \
     -e HF_TOKEN=your_huggingface_token \
